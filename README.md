@@ -5,3 +5,5 @@
 ### Version
 #### V1.0
 > File upload function prototype
+#### V1.1
+> Supported Image to Base64 convertion

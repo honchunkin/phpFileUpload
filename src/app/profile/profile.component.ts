@@ -13,6 +13,9 @@ export class ProfileComponent implements OnInit {
   form: FormGroup;
   uploadResponse;
 
+  public base64textString: String = "";
+  public convertedImage = '';
+
   constructor(private formBuilder: FormBuilder, private uploadService: UploadService) { }
 
   ngOnInit() {
@@ -25,13 +28,26 @@ export class ProfileComponent implements OnInit {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.form.get('avatar').setValue(file);
+      let reader = new FileReader();
+
+      reader.onload = this._handleReaderLoaded.bind(this);
+
+      reader.readAsBinaryString(file);
     }
+  }
+
+  _handleReaderLoaded(readerEvt) {
+    let binaryString = readerEvt.target.result;
+    this.base64textString = btoa(binaryString);
+    this.convertedImage = 'data:image/jpeg;base64,' + this.base64textString;
+    console.log(btoa(binaryString));
   }
 
   onSubmit() {
     const formData = new FormData();
     // append() to add a key/value pair
     formData.append('avatar', this.form.get('avatar').value);
+    console.log(this.form.get('avatar').value);
 
     this.uploadService.uploadFile(formData).subscribe(
       (res) => {

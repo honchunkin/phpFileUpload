@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <h1>PHP with Angular 7 File Upload Example</h1>
 <div>
@@ -8,10 +9,40 @@
     <img [src]='uploadResponse.url' />
   </div>
 
+  <!--<form [formGroup]="form" (ngSubmit)="onSubmit()"> -->
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <input type="file" name="avatar" (change)="onFileSelect($event)" />
     <button type="submit">Upload</button>
 
+    <!--
+    Not enough document
+    References: https://www.npmjs.com/package/mat-file-upload#output-properties -->
+    <!--
+  <mat-toolbar color="primary">mat-file-upload-demo Demo</mat-toolbar>
+  <div class="app-padding">
+    <mat-card>
+      <mat-file-upload
+        name="avatar"
+        [labelText]="'Select a file to upload:'"
+        [allowMultipleFiles]="false"
+        [showUploadButton]="true"
+        (uploadClicked)="onUploadClicked($event)"
+        (selectedFilesChanged)="onFileSelect($event)">
+      </mat-file-upload>
+    </mat-card>
+  </div>
+-->
   </form>
+
+  <div>
+    <h1>Base64 encoded version</h1>
+    <textarea id="base64textarea" placeholder="Base64 will appear here" cols="50" rows="15">
+      {{base64textString}}
+    </textarea>
+    <hr/>
+    <h1>Base64 to img</h1>
+    <img [src]="convertedImage" alt="Base64 To Img"/>
+</div>
+
 </div>

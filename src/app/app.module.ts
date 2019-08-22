@@ -7,18 +7,40 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { MatButtonModule } from '@angular/material';
+import { MatFileUploadModule } from 'mat-file-upload';
+import { FormsModule } from '@angular/forms';
 
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatInputModule,
+  MatSelectModule,
+  MatToolbarModule,
+} from '@angular/material';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProfileComponent
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFileUploadModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatInputModule,
+    MatSelectModule,
+    MatToolbarModule,
+    FormsModule,
+    MatFileUploadModule
+  ],
+  declarations: [
+    AppComponent,
+    ProfileComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
