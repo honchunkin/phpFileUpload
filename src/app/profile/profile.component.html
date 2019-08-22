@@ -34,15 +34,22 @@
   </div>
 -->
   </form>
-
+  <hr />
   <div>
     <h1>Base64 encoded version</h1>
     <textarea id="base64textarea" placeholder="Base64 will appear here" cols="50" rows="15">
       {{base64textString}}
     </textarea>
-    <hr/>
+    <hr />
     <h1>Base64 to img</h1>
-    <img [src]="convertedImage" alt="Base64 To Img"/>
-</div>
+    <div *ngIf="convertedImage == ''; else convert">
+      Haven't upload image
+    </div>
+
+    <ng-template #convert>
+      <img [src]="convertedImage" alt="Base64 To Img" />
+    </ng-template>
+
+  </div>
 
 </div>
