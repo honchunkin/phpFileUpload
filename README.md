@@ -13,9 +13,11 @@
 > Supported Angular project deployment
 
 ### The major steps of Angular project deployment
-> References: <br/>
-> https://angular.io/guide/deployment <br/>
-> https://ithelp.ithome.com.tw/articles/10205705 <br/>
+> References: 
+<ul>
+<li>https://angular.io/guide/deployment</li>
+<li>https://ithelp.ithome.com.tw/articles/10205705</li>
+</ul>
 Step 1:
 ```js
 ng build --prod
