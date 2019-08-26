@@ -1,5 +1,8 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<!-- Material Design for Bootstrap CSS -->
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
 <h1>PHP with Angular 7 File Upload Example</h1>
 <div>
   <div *ngIf="uploadResponse && uploadResponse.status === 'error'">
@@ -9,10 +12,16 @@
     <img [src]='uploadResponse.url' />
   </div>
 
+
   <!--<form [formGroup]="form" (ngSubmit)="onSubmit()"> -->
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-
-    <input type="file" name="avatar" (change)="onFileSelect($event)">
+    <div class="form-group">
+      <label for="upload" class="bmd-label-floating">File Upload</label>
+      <input type="file" class="form-control-file" id="upload" name="avatar" (change)="onFileSelect($event)">
+      <small class="text-muted">
+        Please upload PDF, PNG, GIF, JPG/JPEG with less than 5 MB files here.
+      </small>
+    </div>
 
     <div *ngIf="checkMIME" class="alert alert-danger">
       PDF, PNG, GIF, JPG/JPEG ONLY
@@ -21,8 +30,7 @@
     <div *ngIf="checkSize" class="alert alert-danger">
       File exceed 5 MB
     </div>
-
-    <button type="submit">Upload</button>
+    <button type="submit" class="btn btn-primary btn-raised" style="background-color: #3f51b5!important; border-color: ##3f51b5!important;">Upload</button>
 
     <!--
     Not enough document
