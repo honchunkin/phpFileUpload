@@ -23,8 +23,6 @@ Angular upload function with backend PHP <br/>
 
 > Supported Angular project deployment
 
-  
-
 ### The major steps of Angular project deployment
 
 References:
