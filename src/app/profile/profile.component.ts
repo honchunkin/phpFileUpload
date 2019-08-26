@@ -65,10 +65,6 @@ export class ProfileComponent implements OnInit {
           this.isMime = true;
           break;
         }
-        case 'image/png': {
-          this.isMime = true;
-          break;
-        }
         case 'application/pdf': {
           this.isMime = true;
           break;
