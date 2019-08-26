@@ -7,3 +7,5 @@
 > File upload function prototype
 #### V1.1
 > Supported Image to Base64 convertion
+#### V1.2
+> Supported upload conditional checking 

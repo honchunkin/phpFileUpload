@@ -12,7 +12,16 @@
   <!--<form [formGroup]="form" (ngSubmit)="onSubmit()"> -->
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-    <input type="file" name="avatar" (change)="onFileSelect($event)" />
+    <input type="file" name="avatar" (change)="onFileSelect($event)">
+
+    <div *ngIf="checkMIME" class="alert alert-danger">
+      PDF, PNG, GIF, JPG/JPEG ONLY
+    </div>
+
+    <div *ngIf="checkSize" class="alert alert-danger">
+      File exceed 5 MB
+    </div>
+
     <button type="submit">Upload</button>
 
     <!--

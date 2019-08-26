@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 })
 export class UploadService {
 
+
   SERVER_URL: string = 'http://127.0.0.1:80/php-file-upload/backend';
 
   constructor(private httpClient: HttpClient) { }
