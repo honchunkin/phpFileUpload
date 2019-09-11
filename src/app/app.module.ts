@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFileUploadModule } from 'mat-file-upload';
 import { FormsModule } from '@angular/forms';
 
+import { UserService } from './user.service';
+
 import {
   MatButtonModule,
   MatCardModule,
@@ -42,7 +44,7 @@ import {
     AppComponent,
     ProfileComponent
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

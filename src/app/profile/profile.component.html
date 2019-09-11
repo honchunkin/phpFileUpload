@@ -1,7 +1,18 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <!-- Material Design for Bootstrap CSS -->
-<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+<link rel="stylesheet"
+  href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+  integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+<hr />
+  <h1>PHP Testing</h1>
+  <button (click)="login()">Login</button>
+
+  <li *ngFor="let user of users">
+    {{user}}
+  </li>
+<hr />
 
 <h1>PHP with Angular 7 File Upload Example</h1>
 <div>
@@ -30,7 +41,8 @@
     <div *ngIf="checkSize" class="alert alert-danger">
       File exceed 5 MB
     </div>
-    <button type="submit" class="btn btn-primary btn-raised" style="background-color: #3f51b5!important; border-color: ##3f51b5!important;">Upload</button>
+    <button type="submit" class="btn btn-primary btn-raised"
+      style="background-color: #3f51b5!important; border-color: ##3f51b5!important;">Upload</button>
 
     <!--
     Not enough document

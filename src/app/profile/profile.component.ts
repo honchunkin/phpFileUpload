@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UploadService } from '../upload.service';
+import { User } from '../user';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-profile',
@@ -18,7 +20,9 @@ export class ProfileComponent implements OnInit {
   isMime: boolean;
   isSize = false;
 
-  constructor(private formBuilder: FormBuilder, private uploadService: UploadService) { }
+  public users: User[] = [];
+
+  constructor(private formBuilder: FormBuilder, private uploadService: UploadService, private userService: UserService) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -122,4 +126,14 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-}
+  login() {
+    this.userService.getUser().subscribe((res: User[]) => {
+      // this.users = res;
+      console.log(res);
+      let result = Object.keys(res).map(e => res[e]);
+      console.log(result);
+      this.users = result;
+    });
+  }
+
+  }
